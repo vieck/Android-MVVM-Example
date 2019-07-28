@@ -25,7 +25,16 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation deps.kotlin.std_lib
+
     implementation deps.support.app_compat
     implementation deps.support.constraint_layout
+
+    //Koin
+    implementation deps.koin.android
+    implementation deps.koin.scope
+    implementation deps.koin.viewmodel
+    implementation deps.koin.experimental
+
+
     testImplementation deps.junit
 }
