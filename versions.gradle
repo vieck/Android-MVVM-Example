@@ -6,6 +6,7 @@ versions.koin = '2.0.1'
 versions.junit = '4.12'
 versions.app_compat = '28.0.0'
 versions.constraint_layout = '1.1.3'
+versions.spotify = '1.1.0'
 ext.versions = versions
 
 deps.gradle_build_tools = "com.android.tools.build:gradle:$versions.gradle"
@@ -22,6 +23,10 @@ koin.scope = "org.koin:koin-android-scope:$versions.koin"
 koin.viewmodel = "org.koin:koin-android-viewmodel:$versions.koin"
 koin.experimental = "org.koin:koin-android-ext:$versions.koin"
 deps.koin = koin
+
+def spotify = [:]
+spotify.auth = "com.spotify.android:auth:$versions.spotify"
+deps.spotify = spotify
 
 def support = [:]
 support.app_compat = "com.android.support:appcompat-v7:$versions.app_compat"

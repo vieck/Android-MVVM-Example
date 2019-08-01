@@ -15,6 +15,9 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            buildConfigField "String", "SPOTIFY_CLIENT_ID", SPOTIFY_CLIENT_ID
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -35,6 +38,8 @@ dependencies {
     implementation deps.koin.viewmodel
     implementation deps.koin.experimental
 
+    //Spotify
+    implementation deps.spotify.auth
 
     testImplementation deps.junit
 }
