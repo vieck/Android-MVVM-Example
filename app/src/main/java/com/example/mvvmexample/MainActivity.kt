@@ -2,14 +2,13 @@ package com.example.mvvmexample
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.spotify.sdk.android.authentication.AuthenticationClient
 import com.spotify.sdk.android.authentication.AuthenticationRequest
 import com.spotify.sdk.android.authentication.AuthenticationResponse
-import org.koin.ext.getFullName
 
 private const val REQUEST_CODE = 1008
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +18,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun login() {
-        val authBuilder = AuthenticationRequest.Builder(BuildConfig.SPOTIFY_CLIENT_ID, AuthenticationResponse.Type.TOKEN, "https://com.example.mvvm/spotify")
+        val authBuilder = AuthenticationRequest.Builder(
+            BuildConfig.SPOTIFY_CLIENT_ID,
+            AuthenticationResponse.Type.TOKEN,
+            "https://com.example.mvvm/spotify"
+        )
         authBuilder.setScopes(arrayOf("streaming"))
         val request = authBuilder.build()
 
