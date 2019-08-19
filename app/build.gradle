@@ -23,14 +23,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+
+    dynamicFeatures = [":home"]
+
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation deps.kotlin.std_lib
 
-    implementation deps.support.app_compat
     implementation deps.support.constraint_layout
+
+    //Navigation
+    implementation deps.navigation.nav_fragment
+    implementation deps.navigation.nav_ui
 
     //Koin
     implementation deps.koin.android
