@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
             val response = AuthenticationClient.getResponse(resultCode, data)
             when (response.type) {
                 AuthenticationResponse.Type.TOKEN -> {
+                    response.accessToken
                     val intent = Intent(this, Class.forName("com.example.home.ui.activities.HomeActivity"))
                     startActivity(intent)
                 }
