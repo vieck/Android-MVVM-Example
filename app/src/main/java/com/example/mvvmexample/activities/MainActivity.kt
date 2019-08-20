@@ -1,8 +1,10 @@
-package com.example.mvvmexample
+package com.example.mvvmexample.activities
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.mvvmexample.BuildConfig
+import com.example.mvvmexample.R
 import com.spotify.sdk.android.authentication.AuthenticationClient
 import com.spotify.sdk.android.authentication.AuthenticationRequest
 import com.spotify.sdk.android.authentication.AuthenticationResponse
