@@ -5,13 +5,16 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mvvmexample.BuildConfig
 import com.example.mvvmexample.R
+import com.example.mvvmexample.viewmodels.AuthViewModel
 import com.spotify.sdk.android.authentication.AuthenticationClient
 import com.spotify.sdk.android.authentication.AuthenticationRequest
 import com.spotify.sdk.android.authentication.AuthenticationResponse
+import org.koin.android.viewmodel.ext.android.viewModel
 
 private const val REQUEST_CODE = 1008
 
 class MainActivity : AppCompatActivity() {
+    private val authViewModel: AuthViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,8 +41,9 @@ class MainActivity : AppCompatActivity() {
             val response = AuthenticationClient.getResponse(resultCode, data)
             when (response.type) {
                 AuthenticationResponse.Type.TOKEN -> {
-                    response.accessToken
-                    val intent = Intent(this, Class.forName("com.example.home.ui.activities.HomeActivity"))
+                    authViewModel.saveToken(response.accessToken)
+                    val intent =
+                        Intent(this, Class.forName("com.example.home.ui.activities.HomeActivity"))
                     startActivity(intent)
                 }
                 AuthenticationResponse.Type.ERROR -> return
