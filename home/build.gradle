@@ -26,4 +26,10 @@ dependencies {
     //Navigation
     implementation deps.navigation.nav_fragment
     implementation deps.navigation.nav_ui
+
+    //Koin
+    implementation deps.koin.android
+    implementation deps.koin.scope
+    implementation deps.koin.viewmodel
+    implementation deps.koin.experimental
 }
