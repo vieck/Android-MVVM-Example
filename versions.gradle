@@ -8,6 +8,7 @@ versions.app_compat = '28.0.0'
 versions.constraint_layout = '1.1.3'
 versions.navigation = '2.1.0-rc01'
 versions.spotify = '1.1.0'
+versions.retrofit = '2.6.1'
 ext.versions = versions
 
 deps.gradle_build_tools = "com.android.tools.build:gradle:$versions.gradle"
@@ -37,6 +38,8 @@ def navigation = [:]
 navigation.nav_fragment = "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
 navigation.nav_ui = "androidx.navigation:navigation-ui-ktx:$versions.navigation"
 deps.navigation = navigation
+
+deps.retrofit = "com.squareup.retrofit2:retrofit:$versions.retrofit"
 
 ext.deps = deps
 

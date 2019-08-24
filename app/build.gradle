@@ -49,5 +49,7 @@ dependencies {
     //Spotify
     implementation deps.spotify.auth
 
+    implementation deps.retrofit
+
     testImplementation deps.junit
 }
