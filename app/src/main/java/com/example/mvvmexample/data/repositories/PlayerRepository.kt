@@ -1,5 +1,6 @@
 package com.example.mvvmexample.data.repositories
 
+import com.example.mvvmexample.data.models.PlayHistory
 import com.example.mvvmexample.data.services.PlayerService
 import io.reactivex.Flowable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -7,7 +8,7 @@ import io.reactivex.schedulers.Schedulers
 
 class PlayerRepository(private val playerService: PlayerService) {
 
-    fun getRecentlyPlayedTracks(limit: Int): Flowable<Any> {
+    fun getRecentlyPlayedTracks(limit: Int): Flowable<List<PlayHistory>> {
         return playerService.getRecentlyPlayedTracks(limit)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
