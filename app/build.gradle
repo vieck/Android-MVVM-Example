@@ -46,6 +46,11 @@ dependencies {
     implementation deps.koin.viewmodel
     implementation deps.koin.experimental
 
+    //RxJava
+    implementation deps.reactive.rxjava
+    implementation deps.reactive.rxkotlin
+    implementation deps.reactive.rxandroid
+
     //Spotify
     implementation deps.spotify.auth
 
