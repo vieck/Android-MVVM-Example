@@ -6,7 +6,7 @@ import org.koin.core.context.loadKoinModules
 import org.koin.dsl.module
 
 val homeModule = module {
-    viewModel { HomeViewModel() }
+    viewModel { HomeViewModel(get()) }
 }
 
 private val homeFeature by lazy { loadKoinModules(homeModule) }
