@@ -50,6 +50,7 @@ navigation.nav_ui = "androidx.navigation:navigation-ui-ktx:$versions.navigation"
 deps.navigation = navigation
 
 deps.retrofit = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+deps.retrofit_rxjava_adapter = "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
 deps.moshi_converter = "com.squareup.retrofit2:converter-moshi:$versions.moshi"
 
 ext.deps = deps

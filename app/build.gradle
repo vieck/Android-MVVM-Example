@@ -55,6 +55,7 @@ dependencies {
     implementation deps.spotify.auth
 
     implementation deps.retrofit
+    implementation deps.retrofit_rxjava_adapter
     implementation deps.moshi_converter
 
     implementation 'androidx.core:core-ktx:1.0.1'
