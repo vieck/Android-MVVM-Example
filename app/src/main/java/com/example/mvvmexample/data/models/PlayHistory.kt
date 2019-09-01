@@ -1,13 +1,13 @@
 package com.example.mvvmexample.data.models
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 import java.util.*
 
 data class PlayHistory(
-    @SerializedName("track")
+    @Json(name="track")
     val track: Any,
-    @SerializedName("played_at")
+    @Json(name="played_at")
     val playedAt: Date,
-    @SerializedName("context")
+    @Json(name="context")
     val context: SpotifyContext
 )

@@ -8,8 +8,9 @@ import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import retrofit2.Retrofit
+import retrofit2.converter.moshi.MoshiConverterFactory
 
-val spotifyRetrofit: Retrofit = Retrofit.Builder().baseUrl("https://api.spotify.com/v1/").build()
+val spotifyRetrofit: Retrofit = Retrofit.Builder().baseUrl("https://api.spotify.com/v1/").addConverterFactory(MoshiConverterFactory.create()).build()
 val playerService = spotifyRetrofit.create(PlayerService::class.java)
 
 val repositoryModule = module {

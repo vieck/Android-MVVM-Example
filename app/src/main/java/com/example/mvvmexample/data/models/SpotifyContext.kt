@@ -1,12 +1,12 @@
 package com.example.mvvmexample.data.models
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class SpotifyContext(
-    @SerializedName("type")
+    @Json(name = "type")
     val type: String,
-    @SerializedName("href")
+    @Json(name="href")
     val href: String,
-    @SerializedName("uri")
+    @Json(name = "uri")
     val uri: String
 )

@@ -55,7 +55,7 @@ dependencies {
     implementation deps.spotify.auth
 
     implementation deps.retrofit
-    implementation deps.gson
+    implementation deps.moshi_converter
 
     testImplementation deps.junit
 }
