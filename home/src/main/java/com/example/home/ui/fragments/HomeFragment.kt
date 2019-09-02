@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
     private fun setupObservers() {
         homeViewModel.recentlyPlayedTracks.observe(viewLifecycleOwner, Observer {
             when (it) {
-                is Resource.Success -> Toast.makeText(context, "Length: " + it.data.size, Toast.LENGTH_SHORT).show()
+                is Resource.Success -> Toast.makeText(context, "Length: " + it.data.items.size, Toast.LENGTH_SHORT).show()
             }
         })
     }
