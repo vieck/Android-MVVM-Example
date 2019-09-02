@@ -58,7 +58,7 @@ dependencies {
     implementation deps.retrofit_rxjava_adapter
     implementation deps.moshi_converter
 
-    implementation 'androidx.core:core-ktx:1.0.1'
+    implementation "androidx.core:core-ktx:1.0.2"
 
     testImplementation deps.junit
 }

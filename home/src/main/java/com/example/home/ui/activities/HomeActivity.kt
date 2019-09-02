@@ -3,8 +3,8 @@ package com.example.home.ui.activities
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.home.R
-import com.example.home.ui.di.injectFeature
-import com.example.home.ui.viewmodels.HomeViewModel
+import com.example.home.di.injectFeature
+import com.example.home.viewmodels.HomeViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class HomeActivity : AppCompatActivity() {

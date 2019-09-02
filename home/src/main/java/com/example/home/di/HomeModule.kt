@@ -1,6 +1,6 @@
-package com.example.home.ui.di
+package com.example.home.di
 
-import com.example.home.ui.viewmodels.HomeViewModel
+import com.example.home.viewmodels.HomeViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.dsl.module

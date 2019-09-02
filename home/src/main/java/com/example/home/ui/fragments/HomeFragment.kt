@@ -5,17 +5,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.home.R
-import com.example.home.ui.di.injectFeature
-import com.example.home.ui.viewmodels.HomeViewModel
+import com.example.home.di.injectFeature
+import com.example.home.ui.adapters.AlbumAdapter
+import com.example.home.viewmodels.HomeViewModel
 import com.example.mvvmexample.data.network.Resource
+import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
     private val homeViewModel: HomeViewModel by viewModel()
+    private lateinit var albumAdapter: AlbumAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,14 +30,24 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         injectFeature()
+        setupRecentlyPlayedRecyclerView()
         setupObservers()
+    }
+
+    private fun setupRecentlyPlayedRecyclerView() {
+        albumAdapter = AlbumAdapter()
+        recentlyPlayedRecyclerView.adapter = albumAdapter
+        recentlyPlayedRecyclerView.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
     }
 
     private fun setupObservers() {
         homeViewModel.recentlyPlayedTracks.observe(viewLifecycleOwner, Observer {
             when (it) {
-                is Resource.Success -> Toast.makeText(context, "Length: " + it.data.items.size, Toast.LENGTH_SHORT).show()
+                is Resource.Success -> albumAdapter.setAlbums(it.data.items)
             }
         })
     }
+
+
 }

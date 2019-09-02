@@ -1,4 +1,4 @@
-package com.example.home.ui.viewmodels
+package com.example.home.viewmodels
 
 import androidx.lifecycle.ViewModel
 import com.example.mvvmexample.data.repositories.PlayerRepository
