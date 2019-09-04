@@ -1,12 +1,13 @@
 package com.example.mvvmexample.data.models
 
+import com.example.mvvmexample.repository.dtos.IPlayHistory
 import com.squareup.moshi.Json
 
 data class PlayHistory(
     @Json(name = "track")
-    val track: Any,
+    override val track: Track,
     @Json(name = "played_at")
-    val playedAt: String,
+    override val playedAt: String,
     @Json(name = "context")
-    val context: SpotifyContext
-)
+    override val context: SpotifyContext
+): IPlayHistory

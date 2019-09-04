@@ -1,12 +1,13 @@
 package com.example.mvvmexample.data.models
 
+import com.example.mvvmexample.repository.dtos.ISpotifyContext
 import com.squareup.moshi.Json
 
 data class SpotifyContext(
     @Json(name = "type")
-    val type: String,
+    override val type: String,
     @Json(name = "href")
-    val href: String,
+    override val href: String,
     @Json(name = "uri")
-    val uri: String
-)
+    override val uri: String
+): ISpotifyContext
