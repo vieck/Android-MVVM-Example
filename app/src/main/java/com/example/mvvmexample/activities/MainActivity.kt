@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.mvvmexample.BuildConfig
 import com.example.mvvmexample.R
 import com.example.mvvmexample.viewmodels.AuthViewModel
+import com.example.navigation.Destinations
+import com.example.navigation.FeatureNavigation
 import com.spotify.sdk.android.authentication.AuthenticationClient
 import com.spotify.sdk.android.authentication.AuthenticationRequest
 import com.spotify.sdk.android.authentication.AuthenticationResponse
@@ -42,8 +44,7 @@ class MainActivity : AppCompatActivity() {
             when (response.type) {
                 AuthenticationResponse.Type.TOKEN -> {
                     authViewModel.saveToken(response.accessToken)
-                    val intent =
-                        Intent(this, Class.forName("com.example.home.ui.activities.HomeActivity"))
+                    val intent = FeatureNavigation.dynamicStart(Destinations.HOME)
                     startActivity(intent)
                 }
                 AuthenticationResponse.Type.ERROR -> return

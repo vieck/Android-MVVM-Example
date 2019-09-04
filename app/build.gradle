@@ -33,6 +33,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api project(":repository")
+    implementation project(":navigation")
     implementation deps.kotlin.std_lib
 
     implementation deps.support.constraint_layout
