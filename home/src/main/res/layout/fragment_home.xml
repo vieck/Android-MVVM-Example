@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/spotifyGreen"
+    android:background="@color/blackBackground"
     tools:context=".ui.fragments.HomeFragment">
 
     <androidx.core.widget.NestedScrollView
@@ -26,6 +26,7 @@
                 android:text="@string/recentlyPlayed"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:textColor="@color/whiteText"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
