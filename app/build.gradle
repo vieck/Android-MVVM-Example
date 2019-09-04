@@ -32,6 +32,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api project(":repository")
     implementation deps.kotlin.std_lib
 
     implementation deps.support.constraint_layout
@@ -46,8 +47,19 @@ dependencies {
     implementation deps.koin.viewmodel
     implementation deps.koin.experimental
 
+    //RxJava
+    implementation deps.reactive.rxjava
+    implementation deps.reactive.rxkotlin
+    implementation deps.reactive.rxandroid
+
     //Spotify
     implementation deps.spotify.auth
+
+    implementation deps.retrofit
+    implementation deps.retrofit_rxjava_adapter
+    implementation deps.moshi_converter
+
+    implementation "androidx.core:core-ktx:1.0.2"
 
     testImplementation deps.junit
 }
