@@ -13,6 +13,7 @@ versions.rxjava = '2.1.9'
 versions.rxkotlin = '2.2.0'
 versions.rxandroid = '2.1.1'
 versions.moshi = '2.4.0'
+versions.glide = '4.9.0'
 ext.versions = versions
 
 deps.gradle_build_tools = "com.android.tools.build:gradle:$versions.gradle"

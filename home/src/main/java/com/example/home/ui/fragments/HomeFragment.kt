@@ -35,7 +35,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupRecentlyPlayedRecyclerView() {
-        albumAdapter = AlbumAdapter()
+        albumAdapter = AlbumAdapter(context!!)
         recentlyPlayedRecyclerView.adapter = albumAdapter
         recentlyPlayedRecyclerView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
