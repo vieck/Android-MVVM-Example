@@ -1,4 +1,4 @@
-package com.example.mvvmexample.di
+package com.example.mvvmexample.home.di
 
 import android.app.Application
 import org.koin.android.ext.koin.androidContext

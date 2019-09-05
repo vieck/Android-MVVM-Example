@@ -1,4 +1,4 @@
-package com.example.mvvmexample.viewmodels
+package com.example.mvvmexample.home.viewmodels
 
 import androidx.lifecycle.ViewModel
 import com.example.mvvmexample.data.repositories.AuthRepository

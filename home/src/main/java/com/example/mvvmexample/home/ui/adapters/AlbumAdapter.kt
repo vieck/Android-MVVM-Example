@@ -1,4 +1,4 @@
-package com.example.home.ui.adapters
+package com.example.mvvmexample.home.ui.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.home.R
+import com.example.mvvmexample.home.R
 import com.example.mvvmexample.data.models.PlayHistory
 import kotlinx.android.synthetic.main.listitem_track_small.view.*
 
