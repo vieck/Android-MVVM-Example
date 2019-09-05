@@ -1,4 +1,4 @@
-package com.example.home.ui.fragments
+package com.example.mvvmexample.home.ui.fragments
 
 
 import android.os.Bundle
@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.home.R
-import com.example.home.di.injectFeature
-import com.example.home.ui.adapters.AlbumAdapter
-import com.example.home.viewmodels.HomeViewModel
 import com.example.mvvmexample.data.network.Resource
+import com.example.mvvmexample.home.R
+import com.example.mvvmexample.home.di.injectFeature
+import com.example.mvvmexample.home.ui.adapters.AlbumAdapter
+import com.example.mvvmexample.home.viewmodels.HomeViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.android.viewmodel.ext.android.viewModel
 

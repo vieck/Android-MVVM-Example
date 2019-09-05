@@ -1,10 +1,10 @@
-package com.example.mvvmexample.di
+package com.example.mvvmexample.home.di
 
 import com.example.mvvmexample.data.network.SpotifyInterceptor
 import com.example.mvvmexample.data.repositories.AuthRepository
 import com.example.mvvmexample.data.repositories.PlayerRepository
 import com.example.mvvmexample.data.services.PlayerService
-import com.example.mvvmexample.viewmodels.AuthViewModel
+import com.example.mvvmexample.home.viewmodels.AuthViewModel
 import okhttp3.OkHttpClient
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module

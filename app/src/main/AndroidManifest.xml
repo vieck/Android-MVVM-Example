@@ -4,7 +4,7 @@
     package="com.example.mvvmexample">
 
     <application
-        android:name=".di.BaseApplication"
+        android:name="com.example.mvvmexample.home.di.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -20,6 +20,11 @@
                 <data
                     android:host="https://com.example.mvvm"
                     android:scheme="spotify" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.NavigationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
         <activity

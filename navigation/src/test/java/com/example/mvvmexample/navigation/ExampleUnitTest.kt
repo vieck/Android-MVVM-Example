@@ -1,4 +1,4 @@
-package com.example.navigation
+package com.example.mvvmexample.navigation
 
 import org.junit.Test
 
