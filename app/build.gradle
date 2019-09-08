@@ -12,7 +12,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         debug {
@@ -61,7 +61,7 @@ dependencies {
     implementation deps.retrofit_rxjava_adapter
     implementation deps.moshi_converter
 
-    api "androidx.core:core-ktx:1.0.2"
+    api 'androidx.core:core-ktx:1.0.2'
 
     testImplementation deps.junit
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
