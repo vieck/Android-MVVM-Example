@@ -21,6 +21,10 @@ allprojects {
     addRepos(repositories)
 }
 
+subprojects {
+    apply from: '../keys.gradle'
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
