@@ -3,7 +3,9 @@ package com.example.mvvmexample.home.di
 import com.example.mvvmexample.data.network.SpotifyInterceptor
 import com.example.mvvmexample.data.repositories.AuthRepository
 import com.example.mvvmexample.data.repositories.PlayerRepository
+import com.example.mvvmexample.data.repositories.PlaylistRepository
 import com.example.mvvmexample.data.services.PlayerService
+import com.example.mvvmexample.data.services.PlaylistService
 import com.example.mvvmexample.home.viewmodels.AuthViewModel
 import okhttp3.OkHttpClient
 import org.koin.android.viewmodel.dsl.viewModel
@@ -23,16 +25,16 @@ val spotifyRetrofit: Retrofit = Retrofit.Builder()
     .client(okHttpClient)
     .build()
 
-val playerService: PlayerService = spotifyRetrofit.create(PlayerService::class.java)
-
 val serviceModule = module {
-    single { playerService }
+    single { spotifyRetrofit.create(PlayerService::class.java) }
+    single { spotifyRetrofit.create(PlaylistService::class.java)}
 }
 
 val repositoryModule = module {
     single { spotifyRetrofit }
     single { authRepository }
     single { PlayerRepository(get()) }
+    single { PlaylistRepository(get()) }
 }
 
 val viewModelModules = module {
