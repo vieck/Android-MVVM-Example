@@ -21,6 +21,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':app')
 
+    implementation deps.support.constraint_layout
 
     //Koin
     implementation deps.koin.android
