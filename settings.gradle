@@ -1,1 +1,1 @@
-include ':app', ':home', ':repository', ':navigation'
+include ':app', ':home', ':repository', ':navigation', ':playlists'

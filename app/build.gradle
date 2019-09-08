@@ -25,12 +25,13 @@ android {
     }
 
 
-    dynamicFeatures = [":home"]
+    dynamicFeatures = [":home", ":playlists"]
 
 
 }
 
 dependencies {
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api project(":repository")
     implementation project(":navigation")
@@ -60,7 +61,8 @@ dependencies {
     implementation deps.retrofit_rxjava_adapter
     implementation deps.moshi_converter
 
-    implementation "androidx.core:core-ktx:1.0.2"
+    api "androidx.core:core-ktx:1.0.2"
 
     testImplementation deps.junit
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
