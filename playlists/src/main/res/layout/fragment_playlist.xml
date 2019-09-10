@@ -35,7 +35,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/playlistLabel" />
+                app:layout_constraintTop_toBottomOf="@id/playlistLabel"
+                tools:listitem="@layout/listitem_playlist"
+                tools:itemCount="5"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
