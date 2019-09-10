@@ -22,6 +22,7 @@ dependencies {
     implementation project(':app')
 
     implementation deps.support.constraint_layout
+    implementation "androidx.recyclerview:recyclerview:1.1.0-beta04"
 
     //Koin
     implementation deps.koin.android
