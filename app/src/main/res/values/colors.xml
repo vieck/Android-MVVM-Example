@@ -6,4 +6,5 @@
     <color name="spotifyGreen">#4CAF50</color>
     <color name="blackBackground">#0E0D0D</color>
     <color name="whiteText">#CEFFFFFF</color>
+    <color name="transparentBlack">#3B464646</color>
 </resources>

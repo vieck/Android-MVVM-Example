@@ -2,10 +2,8 @@ package com.example.mvvmexample.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import com.example.mvvmexample.R
 import com.example.mvvmexample.navigation.Destinations
-import com.example.mvvmexample.navigation.ActivityNavigation
 import com.example.mvvmexample.navigation.FragmentNavigation
 import kotlinx.android.synthetic.main.activity_navigation.*
 
@@ -18,21 +16,18 @@ class NavigationActivity : AppCompatActivity() {
     }
 
     private fun loadHomeFragment() {
-        val homeFragment = FragmentNavigation.dynamicStart(Destinations.HOME)
-        startFragment(homeFragment!!)
+        startFragment(Destinations.HOME)
     }
 
     private fun setupBottomNavigation() {
         bottomNavigation.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.navigation_home -> {
-                    FragmentNavigation.dynamicStart(Destinations.HOME)?.let {
-                        startFragment(it)
-                    }
+                    startFragment(Destinations.HOME)
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.navigation_playlists -> {
-                    intent = ActivityNavigation.dynamicStart(Destinations.MAIN)
+                    startFragment(Destinations.PLAYLIST)
                     return@setOnNavigationItemSelectedListener true
                 }
                 else -> false
@@ -40,11 +35,14 @@ class NavigationActivity : AppCompatActivity() {
         }
     }
 
-    private fun startFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.container, fragment)
-            addToBackStack(null)
-            commit()
+    private fun startFragment(destination: Destinations) {
+        FragmentNavigation.dynamicStart(destination)?.let { fragment ->
+            supportFragmentManager.beginTransaction().apply {
+                replace(R.id.container, fragment)
+                addToBackStack(null)
+                commit()
+
+            }
         }
     }
 }

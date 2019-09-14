@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.mvvmexample.BuildConfig
 import com.example.mvvmexample.R
 import com.example.mvvmexample.home.viewmodels.AuthViewModel
-import com.example.mvvmexample.navigation.Destinations
 import com.example.mvvmexample.navigation.ActivityNavigation
+import com.example.mvvmexample.navigation.Destinations
 import com.spotify.sdk.android.authentication.AuthenticationClient
 import com.spotify.sdk.android.authentication.AuthenticationRequest
 import com.spotify.sdk.android.authentication.AuthenticationResponse
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             AuthenticationResponse.Type.TOKEN,
             "https://com.example.mvvm/spotify"
         )
-        authBuilder.setScopes(arrayOf("streaming", "user-read-recently-played"))
+        authBuilder.setScopes(arrayOf("streaming", "user-read-recently-played", "playlist-read-private"))
         val request = authBuilder.build()
 
         AuthenticationClient.openLoginActivity(this, 1008, request)

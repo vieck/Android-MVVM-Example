@@ -5,12 +5,12 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 29
 
+
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-
 
     }
 
@@ -22,10 +22,7 @@ dependencies {
     implementation project(':app')
 
     implementation deps.support.constraint_layout
-
-    //Navigation
-    implementation deps.navigation.nav_fragment
-    implementation deps.navigation.nav_ui
+    implementation "androidx.recyclerview:recyclerview:1.1.0-beta04"
 
     //Koin
     implementation deps.koin.android

@@ -8,8 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.mvvmexample.home.R
 import com.example.mvvmexample.data.models.PlayHistory
+import com.example.mvvmexample.home.R
 import kotlinx.android.synthetic.main.listitem_track_small.view.*
 
 class AlbumAdapter(private val context: Context) : RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder>() {

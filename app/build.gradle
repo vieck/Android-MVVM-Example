@@ -5,18 +5,18 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
         applicationId "com.example.mvvmexample"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         debug {
-            buildConfigField "String", "SPOTIFY_CLIENT_ID", SPOTIFY_CLIENT_ID
+            buildConfigField "String", "SPOTIFY_CLIENT_ID", "\"$SPOTIFY_CLIENT_ID\""
         }
         release {
             minifyEnabled false
@@ -25,12 +25,13 @@ android {
     }
 
 
-    dynamicFeatures = [":home"]
+    dynamicFeatures = [":home", ":playlists"]
 
 
 }
 
 dependencies {
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api project(":repository")
     implementation project(":navigation")
@@ -60,7 +61,12 @@ dependencies {
     implementation deps.retrofit_rxjava_adapter
     implementation deps.moshi_converter
 
-    implementation "androidx.core:core-ktx:1.0.2"
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$versions.glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$versions.glide"
+
+    api "androidx.core:core-ktx:$versions.corektx"
 
     testImplementation deps.junit
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
