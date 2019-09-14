@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             AuthenticationResponse.Type.TOKEN,
             "https://com.example.mvvm/spotify"
         )
-        authBuilder.setScopes(arrayOf("streaming", "user-read-recently-played"))
+        authBuilder.setScopes(arrayOf("streaming", "user-read-recently-played", "playlist-read-private"))
         val request = authBuilder.build()
 
         AuthenticationClient.openLoginActivity(this, 1008, request)
