@@ -25,7 +25,7 @@ android {
     }
 
 
-    dynamicFeatures = [":home", ":playlists"]
+    dynamicFeatures = [":home", ":playlists", ":browse"]
 
 
 }

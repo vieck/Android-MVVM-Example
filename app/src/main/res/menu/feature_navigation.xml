@@ -9,4 +9,9 @@
         android:id="@+id/navigation_playlists"
         android:icon="@android:drawable/ic_menu_upload_you_tube"
         android:title="@string/title_playlists" />
+
+    <item
+        android:id="@+id/navigation_browse"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="@string/title_browse" />
 </menu>

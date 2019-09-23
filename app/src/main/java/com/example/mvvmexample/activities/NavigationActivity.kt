@@ -30,6 +30,10 @@ class NavigationActivity : AppCompatActivity() {
                     startFragment(Destinations.PLAYLIST)
                     return@setOnNavigationItemSelectedListener true
                 }
+                R.id.navigation_browse -> {
+                    startFragment(Destinations.BROWSE)
+                    return@setOnNavigationItemSelectedListener true
+                }
                 else -> false
             }
         }
