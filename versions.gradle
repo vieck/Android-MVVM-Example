@@ -46,6 +46,8 @@ def support = [:]
 support.constraint_layout = "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
 deps.support = support
 
+deps.material = "com.google.android.material:material:1.1.0-alpha10"
+
 def navigation = [:]
 navigation.nav_fragment = "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
 navigation.nav_ui = "androidx.navigation:navigation-ui-ktx:$versions.navigation"
